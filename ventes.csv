@@ -1,0 +1,4 @@
+id,produit,quantite,prix_unitaire,client_id
+1,laptop,2,1000,101
+2,souris,5,20,102
+3,clavier,1,50,101
