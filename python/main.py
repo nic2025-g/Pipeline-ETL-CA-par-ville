@@ -77,4 +77,13 @@ SELECT ville,
        RANK() OVER (PARTITION BY ville ORDER BY total_ca DESC) as rang
 FROM ca_par_produit
 """
-print(pd.read_sql_query(sql_rank, conn))
+
+# --- SQL 02 depuis le fichier ---
+with open(ROOT / "sql" / "02_window_rank.sql", "r", encoding="utf-8") as f:
+    sql_02 = f.read()
+# On enlève les commentaires et on garde seulement le dernier SELECT si besoin, 
+# mais ici ton fichier est déjà propre
+print("\n--- SQL 02: TOP produit par ville ---")
+print(pd.read_sql_query(sql_02, conn))
+
+# print(pd.read_sql_query(sql_rank, conn))
